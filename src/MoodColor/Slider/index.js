@@ -1,8 +1,34 @@
-import React, { Component } from 'react'
-import Slider from 'material-ui/Slider';
-
-const MoodSlider = ({...props}) => {
-    return (
-        
-    )
+import React from 'react'
+import Slider from 'material-ui/Slider'
+import PropTypes from 'prop-types'
+import './index.css'
+class MoodSlider extends React.Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			moodValue:3
+		}
+		this.onMoodChange = this.onMoodChange.bind(this)
+	}
+	onMoodChange (event,value) {
+		event.preventDefault()
+		this.props.changeMood(value)
+		this.setState({moodValue: value})   
+	}
+	render() {
+		return(
+			<div className='slider-container'>
+				<Slider min={1} max={5} value={this.state.moodValue} onChange={this.onMoodChange} />
+				<span> Your current mood is {this.props.mood ? this.props.mood : 'not yet determined'} </span>
+			</div> 
+		)
+	}
 }
+
+
+MoodSlider.propTypes = {
+	changeMood: PropTypes.func.isRequired,
+	mood: PropTypes.string
+}
+
+export default MoodSlider
