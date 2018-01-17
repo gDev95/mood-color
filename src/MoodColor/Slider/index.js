@@ -23,7 +23,7 @@ class MoodSlider extends React.Component {
 				<div className='slider-container'>
 					<HappyIcon className='mood-emotion'/>
 					<div className='slider'>
-						<Slider min={1} max={5} value={this.state.moodValue} onChange={this.onMoodChange} />
+						<Slider min={1} max={7} value={this.state.moodValue} onChange={this.onMoodChange} />
 					</div>
 					<SadIcon className='mood-emotion' />
 				</div>

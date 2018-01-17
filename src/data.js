@@ -3,28 +3,38 @@ const data = {
 		{
 			value: 1,
 			meaning: 'happy',
-			color: 'yellow'
+			color: '#6600cc'
 		},
 		{
 			value: 2,
 			meaning: 'hopeful',
-			color: 'green'
+			color: '#0000cc'
 		},
 		{
 			value: 3,
 			meaning: 'indifferent',
-			color: 'grey'
+			color: '#009999'
 		},
 		{
 			value: 4,
 			meaning: 'fearful',
-			color: 'black'
+			color: '#00cc00'
 		},
 		{
 			value: 5,
 			meaning: 'angry',
-			color: 'red'
+			color: '#FFC200'
 		},
+		{
+			value: 6,
+			meaning: 'not yet',
+			color: '#a0a0a0'
+		},
+		{
+			value: 7,
+			meaning: 'still not',
+			color: '#000'
+		}
 	]
 
 }

@@ -9,8 +9,8 @@ class Container extends Component {
 		super()
 		this.state = {
 			moodValue: 0.0,
-			moodState: undefined,
-			moodColor: undefined
+			moodState: '',
+			moodColor: ''
 		}
 		this.onChange = this.onChange.bind(this)
 	}
