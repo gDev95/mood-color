@@ -2,6 +2,8 @@ import React from 'react'
 import Slider from 'material-ui/Slider'
 import PropTypes from 'prop-types'
 import './index.css'
+import HappyIcon from 'material-ui/svg-icons/social/mood'
+import SadIcon from 'material-ui/svg-icons/social/mood-bad'
 class MoodSlider extends React.Component {
 	constructor(props){
 		super(props)
@@ -17,8 +19,14 @@ class MoodSlider extends React.Component {
 	}
 	render() {
 		return(
-			<div className='slider-container'>
-				<Slider min={1} max={5} value={this.state.moodValue} onChange={this.onMoodChange} />
+			<div className='slider-wrapper'>
+				<div className='slider-container'>
+					<HappyIcon className='mood-emotion'/>
+					<div className='slider'>
+						<Slider min={1} max={5} value={this.state.moodValue} onChange={this.onMoodChange} />
+					</div>
+					<SadIcon className='mood-emotion' />
+				</div>
 				<span> Your current mood is {this.props.mood ? this.props.mood : 'not yet determined'} </span>
 			</div> 
 		)
@@ -28,7 +36,8 @@ class MoodSlider extends React.Component {
 
 MoodSlider.propTypes = {
 	changeMood: PropTypes.func.isRequired,
-	mood: PropTypes.string
+	mood: PropTypes.string,
+	moodColor: PropTypes.string
 }
 
 export default MoodSlider

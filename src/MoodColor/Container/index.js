@@ -23,7 +23,8 @@ class Container extends Component {
 	getMood(moodValue) {
 		
 		data.moods.map((mood) => {
-			if(moodValue === mood.value ){
+			
+			if(Math.round(Number(moodValue)) === mood.value ){
 				this.setState({moodState: mood.meaning, moodColor: mood.color})
 				return 1
 			}
@@ -36,7 +37,7 @@ class Container extends Component {
 		
 		return (
 			<div className='container' style={{ backgroundColor: this.state.moodColor  ? this.state.moodColor : '#FFF'}}>
-				<MoodSlider mood={this.state.moodState} changeMood={this.onChange} />
+				<MoodSlider mood={this.state.moodState} moodColor={this.state.moodColor} changeMood={this.onChange} />
 			</div>
 		)
 	}
