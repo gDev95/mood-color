@@ -1,0 +1,12 @@
+.header-wrapper {
+    height: 200px;
+    line-height: 200px;
+    width:100%;
+    text-align: center;
+    border: 1px solid;
+}
+.header-text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
