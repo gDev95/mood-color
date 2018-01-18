@@ -1,4 +1,4 @@
-.header-wrapper {
+.footer-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -8,11 +8,18 @@
     color:#FFF;
     background-color:#000;
 }
-.header-text {
+.footer-text {
     margin:0;
     font-family: 'Kavivanar', cursive;
 }
-.subheader-text {
-    margin:0;
-    font-family: 'Kavivanar', cursive;
+.footer-icon {
+    margin:5px;
+    text-decoration: none;
+    color:#FFF;
+}
+.footer-icon:visited{
+    text-decoration: none;
+}
+.footer-icon:focus {
+    text-decoration: none;
 }

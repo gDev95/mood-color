@@ -4,11 +4,16 @@ import PropTypes from 'prop-types'
 import './index.css'
 import HappyIcon from 'material-ui/svg-icons/social/mood'
 import SadIcon from 'material-ui/svg-icons/social/mood-bad'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
+
+
 class MoodSlider extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			moodValue:3
+			moodValue:6
 		}
 		this.onMoodChange = this.onMoodChange.bind(this)
 	}
@@ -17,17 +22,27 @@ class MoodSlider extends React.Component {
 		this.props.changeMood(value)
 		this.setState({moodValue: value})   
 	}
+	
 	render() {
+		const muiTheme = getMuiTheme({
+			slider: {
+				selectionColor: this.props.mood ? this.props.moodFontColor : '#000',
+				  handleFillColor: this.props.mood ? this.props.moodFontColor : '#000'
+			}
+		})
 		return(
 			<div className='slider-wrapper'>
 				<div className='slider-container'>
-					<HappyIcon className='mood-emotion'/>
+					<HappyIcon className='mood-emotion' style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}/>
 					<div className='slider'>
-						<Slider min={1} max={7} value={this.state.moodValue} onChange={this.onMoodChange} />
+						<MuiThemeProvider muiTheme={muiTheme}>
+							<Slider  min={0} max={12} value={this.state.moodValue} onChange={this.onMoodChange} />
+						</MuiThemeProvider>
+
 					</div>
-					<SadIcon className='mood-emotion' />
+					<SadIcon className='mood-emotion' style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}/>
 				</div>
-				<span> Your current mood is {this.props.mood ? this.props.mood : 'not yet determined'} </span>
+				<span style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}>  {this.props.mood ? `Your Mood: ${this.props.mood}` : ''} </span>
 			</div> 
 		)
 	}
@@ -37,7 +52,8 @@ class MoodSlider extends React.Component {
 MoodSlider.propTypes = {
 	changeMood: PropTypes.func.isRequired,
 	mood: PropTypes.string,
-	moodColor: PropTypes.string
+	moodColor: PropTypes.string,
+	moodFontColor: PropTypes.string
 }
 
 export default MoodSlider

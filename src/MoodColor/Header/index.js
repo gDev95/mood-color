@@ -3,7 +3,8 @@ import './index.css'
 
 const Header = () => (
 	<div className='header-wrapper'>
-		<span className='header-text'> The Mood App: Get your Mood Color!</span>
+		<h2 className='header-text'> The Mood App</h2>
+		<h4 className='subheader-text'> Get your Mood Color!</h4>
 	</div>    
 )
 export default Header

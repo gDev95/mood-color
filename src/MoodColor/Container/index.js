@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './index.css'
-import data from 'data.js'
+import StyledContainer from './StyledContainer'
+import moods from 'data.js'
 import MoodSlider from '../Slider'
 
 
@@ -10,7 +10,9 @@ class Container extends Component {
 		this.state = {
 			moodValue: 0.0,
 			moodState: '',
-			moodColor: ''
+			moodColorLeft: '',
+			moodColorRight: '',
+			moodFontColor: ''
 		}
 		this.onChange = this.onChange.bind(this)
 	}
@@ -21,11 +23,26 @@ class Container extends Component {
         
 	}
 	getMood(moodValue) {
-		
-		data.moods.map((mood) => {
-			
-			if(Math.round(Number(moodValue)) === mood.value ){
-				this.setState({moodState: mood.meaning, moodColor: mood.color})
+		moods.map((mood, index) => {		
+			if (Math.round(Number(moodValue)) === index ){
+				if(mood.meaning)
+				{
+					this.setState({
+						moodState: mood.meaning, 
+						moodColorLeft: mood.leftColor,
+						moodColorRight: mood.rightColor, 
+						moodFontColor: mood.fontColor
+					})
+				}
+				else
+				{
+					this.setState({
+						moodColorLeft: mood.leftColor,
+						moodColorRight: mood.rightColor, 
+						moodFontColor: mood.fontColor
+					})	
+				}
+				
 				return 1
 			}
 			else {
@@ -36,9 +53,9 @@ class Container extends Component {
 	render() {
 		
 		return (
-			<div className='container' style={{ backgroundColor: this.state.moodColor  ? this.state.moodColor : '#FFF'}}>
-				<MoodSlider mood={this.state.moodState} moodColor={this.state.moodColor} changeMood={this.onChange} />
-			</div>
+			<StyledContainer moodColorLeft={this.state.moodColorLeft} moodColorRight={this.state.moodColorRight}>
+				<MoodSlider mood={this.state.moodState} moodFontColor={this.state.moodFontColor} moodColor={this.state.moodColor} changeMood={this.onChange} />
+			</StyledContainer>
 		)
 	}
 }
