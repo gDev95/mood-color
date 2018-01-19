@@ -25,6 +25,7 @@ class Container extends Component {
 	getMood(moodValue) {
 		moods.map((mood, index) => {		
 			if (Math.round(Number(moodValue)) === index ){
+				// if not mood has no meaning, do not set moodState
 				if(mood.meaning)
 				{
 					this.setState({

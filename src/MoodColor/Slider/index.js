@@ -24,11 +24,11 @@ class MoodSlider extends React.Component {
 	}
 	
 	render() {
-		// change the slider default values of the material-ui theme
+		// change the slider default values of the material-ui themeyarn
 		const muiTheme = getMuiTheme({
 			slider: {
 				selectionColor: this.props.mood ? this.props.moodFontColor : '#000',
-				  handleFillColor: this.props.mood ? this.props.moodFontColor : '#000'
+				handleFillColor: this.props.mood ? this.props.moodFontColor : '#000'
 			}
 		})
 		return(
