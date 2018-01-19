@@ -14,12 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/gDev95/mood-color.git"
   },
-  "homepage": "https://gDev95.github.io/my-app",
+  "homepage": "https://gDev95.github.io/mood-color",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
-    "build": "react-sc ripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
