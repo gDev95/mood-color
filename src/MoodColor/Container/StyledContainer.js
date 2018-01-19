@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const StyledContainer = styled.div`
 display:flex;
-height:400px;
+height:70vh;
 justify-content: center;
 align-items: center;
 background: linear-gradient(to right, ${props => props.moodColorLeft}, ${props => props.moodColorRight})
