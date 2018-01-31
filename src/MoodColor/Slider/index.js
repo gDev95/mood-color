@@ -34,14 +34,24 @@ class MoodSlider extends React.Component {
 		return(
 			<div className='slider-wrapper'>
 				<div className='slider-container'>
-					<HappyIcon className='mood-emotion' style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}/>
+					<HappyIcon 
+						className='mood-emotion' 
+						style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}
+					/>
 					<div className='slider'>
 						<MuiThemeProvider muiTheme={muiTheme}>
-							<Slider  min={0} max={12} value={this.state.moodValue} onChange={this.onMoodChange} />
+							<Slider  
+								min={0} 
+								max={12} 
+								value={this.state.moodValue} 
+								onChange={this.onMoodChange} 
+							/>
 						</MuiThemeProvider>
-
 					</div>
-					<SadIcon className='mood-emotion' style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}/>
+					<SadIcon 
+						className='mood-emotion' 
+						style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}
+					/>
 				</div>
 				<span style={{color: this.props.mood ? this.props.moodFontColor : '#000'}}>  {this.props.mood ? `Your Mood: ${this.props.mood}` : ''} </span>
 			</div> 

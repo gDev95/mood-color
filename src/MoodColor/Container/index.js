@@ -19,10 +19,10 @@ class Container extends Component {
     
 	onChange (value) {
 		this.setState({moodValue: value})
-		this.getMood(value)
+		this.changeMood(value)
         
 	}
-	getMood(moodValue) {
+	changeMood(moodValue) {
 		moods.map((mood, index) => {		
 			if (Math.round(Number(moodValue)) === index ){
 				// if not mood has no meaning, do not set moodState
@@ -44,7 +44,7 @@ class Container extends Component {
 					})	
 				}
 				
-				return 1
+				return index
 			}
 			else {
 				return 0
@@ -55,7 +55,11 @@ class Container extends Component {
 		
 		return (
 			<StyledContainer moodColorLeft={this.state.moodColorLeft} moodColorRight={this.state.moodColorRight}>
-				<MoodSlider mood={this.state.moodState} moodFontColor={this.state.moodFontColor} moodColor={this.state.moodColor} changeMood={this.onChange} />
+				<MoodSlider 
+					mood={this.state.moodState} 
+					moodFontColor={this.state.moodFontColor} 
+					moodColor={this.state.moodColor} 
+					changeMood={this.onChange} />
 			</StyledContainer>
 		)
 	}

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders properly 1`] = `
+<div
+  className="footer-wrapper"
+>
+  <div
+    className="footer-text"
+  >
+    <a
+      className="footer-icon"
+      href="https://github.com/gDev95"
+      target="_blank"
+    >
+      <FontAwesome
+        name="github"
+        size="2x"
+      />
+    </a>
+    <a
+      className="footer-icon"
+      href="https://www.linkedin.com/in/paul-meyer-046798a8"
+      target="_blank"
+    >
+      <FontAwesome
+        className="footer-icon"
+        name="linkedin"
+        size="2x"
+      />
+    </a>
+  </div>
+</div>
+`;
