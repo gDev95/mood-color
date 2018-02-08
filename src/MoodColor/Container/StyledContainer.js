@@ -8,7 +8,9 @@ display:flex;
 height:70vh;
 justify-content: center;
 align-items: center;
-background: linear-gradient(to right, ${props => props.moodColorLeft}, ${props => props.moodColorRight})
+background: linear-gradient(to right, 
+    ${ props  => props.moodColorLeft }, 
+    ${ props => props.moodColorRight })
 `
 
 export default StyledContainer

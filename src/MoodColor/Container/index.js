@@ -2,67 +2,26 @@ import React, { Component } from 'react'
 import StyledContainer from './StyledContainer'
 import moods from 'data.js'
 import MoodSlider from '../Slider'
-
+import { connect, MapStateToProps } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as MoodActions from 'actions'
 
 class Container extends Component {
-	constructor(){
-		super()
-		this.state = {
-			moodValue: 0.0,
-			moodState: '',
-			moodColorLeft: '',
-			moodColorRight: '',
-			moodFontColor: ''
-		}
-		this.onChange = this.onChange.bind(this)
-	}
-    
-	onChange (value) {
-		this.setState({moodValue: value})
-		this.changeMood(value)
-        
-	}
-	changeMood(moodValue) {
-		moods.map((mood, index) => {		
-			if (Math.round(Number(moodValue)) === index ){
-				// if not mood has no meaning, do not set moodState
-				if(mood.meaning)
-				{
-					this.setState({
-						moodState: mood.meaning, 
-						moodColorLeft: mood.leftColor,
-						moodColorRight: mood.rightColor, 
-						moodFontColor: mood.fontColor
-					})
-				}
-				else
-				{
-					this.setState({
-						moodColorLeft: mood.leftColor,
-						moodColorRight: mood.rightColor, 
-						moodFontColor: mood.fontColor
-					})	
-				}
-				
-				return index
-			}
-			else {
-				return 0
-			}
-		})
-	}
 	render() {
-		
+		const { dispatch, moodState, moodColorLeft, moodColorRight} = this.props
+		const changeMood = bindActionCreators(MoodActions.changeMood, dispatch)
 		return (
-			<StyledContainer moodColorLeft={this.state.moodColorLeft} moodColorRight={this.state.moodColorRight}>
+			<StyledContainer moodColorLeft={moodColorLeft} moodColorRight={moodColorRight}>
 				<MoodSlider 
-					mood={this.state.moodState} 
-					moodFontColor={this.state.moodFontColor} 
-					moodColor={this.state.moodColor} 
-					changeMood={this.onChange} />
+					mood={moodState} 
+					changeMood={changeMood} />
 			</StyledContainer>
 		)
 	}
 }
-
-export default Container
+const mapToStateProps = state => ({
+	moodState: state.moodState,
+	moodColorLeft: state.moodColorLeft,
+	moodColorRight: state.moodColorLeft
+})
+export default connect(mapToStateProps)(Container)
