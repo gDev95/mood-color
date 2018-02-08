@@ -4,74 +4,61 @@ const moods = [
 		meaning: 'Very Happy',
 		leftColor: '#6600cc',
 		rightColor:'#6600cc',
-		fontColor:'#FFF'
 	},
 	{
 		leftColor: '#6600cc',
 		rightColor:'#0000cc',
-		fontColor:'#FFF'
 	},
 	{
 		meaning: 'At ease',
 		leftColor: '#0000cc',
 		rightColor:'#0000cc',
-		fontColor:'#FFF'
 			
 	},
 	{
 		leftColor: '#0000cc',
 		rightColor:'#009999',
-		fontColor:'#FFF'
 	},
 	{
 		meaning: 'Somewhat Relaxed',
 		leftColor: '#009999',
-		rightColor:'#009999',
-		fontColor:'#FFF'
+		rightColor:'#009999'
 	},
 	{
 		leftColor: '#009999',
-		rightColor:'#00cc00',
-		fontColor:'#FFF'
+		rightColor:'#00cc00'
 	},
 	{
 		meaning: 'Not under Stress',
 		leftColor: '#00cc00',
-		rightColor:'#00cc00',
-		fontColor:'#FFF'
+		rightColor:'#00cc00'
 	},
 	{
 		leftColor: '#00cc00',
-		rightColor: '#FFC200',
-		fontColor:'#FFF'
+		rightColor: '#FFC200'
 	},
 	{
 		meaning: 'Unsettled',
 		leftColor: '#FFC200',
-		rightColor: '#FFC200',
-		fontColor:'#FFF'
+		rightColor: '#FFC200'
 	},
 	{
 		leftColor: '#FFC200',
-		rightColor: '#a0a0a0',
-		fontColor:'#FFF'
+		rightColor: '#a0a0a0'
 	},
 	{
 		meaning: 'Nervous',
 		leftColor: '#a0a0a0',
-		rightColor: '#a0a0a0',
-		fontColor:'#FFF'
+		rightColor: '#a0a0a0'
 	},
 	{
 		leftColor: '#a0a0a0',
-		rightColor: '#000',
-		fontColor:'#FFF'
+		rightColor: '#000'
 	},
 	{
 		meaning: 'Tense',
 		leftColor: '#000',
-		rightColor: '#000',
-		fontColor:'#FFF'
+		rightColor: '#000'
 	}
 ]
 export default moods

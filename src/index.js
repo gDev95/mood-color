@@ -1,14 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import MoodColor from './MoodColor'
+import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { createStore } from 'redux'
-import moodApp from './reducer'
-const App = () => (
-	<MuiThemeProvider>
-		<MoodColor />
-	</MuiThemeProvider>
+import store from './store'
+import { changeMood } from './actions'
+const MoodColorApp = () => (
+	<Provider store={store}>
+		<MuiThemeProvider>
+			<MoodColor/>
+		</MuiThemeProvider>
+	</Provider>
 )
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<MoodColorApp />, document.getElementById('root'))
 registerServiceWorker()

@@ -1,23 +1,43 @@
-import { changeMood, MOOD_CHANGE } from './actions'
+import * as MoodActions from './actions'
 import moods from './data'
 
 // initial state set up
 const initialState = {
-	moodValue: 0.0,
 	moodState: '',
 	moodColorLeft: '',
 	moodColorRight: '',
-	moodFontColor: ''
 }
 
 export function moodApp (state = initialState,action){
-	let  newState 
+	let newState
 	switch(action.type){
-	case MOOD_CHANGE:
-		
-		return Object.assign({}, state, {
-            
+	case MoodActions.MOOD_CHANGE:
+	 	moods.map((mood, index) => {		
+			if (Math.round(Number(action.value)) === index ){
+			// if not mood has no meaning, do not set moodState
+				if(mood.meaning)
+				{
+					newState = {
+						moodState: mood.meaning, 
+						moodColorLeft: mood.leftColor,
+						moodColorRight: mood.rightColor, 
+					}
+					return 1
+				}
+				else
+				{
+					newState = {...state,
+						moodColorLeft: mood.leftColor,
+						moodColorRight: mood.rightColor, 
+					}
+					return 1
+				}
+			}
+			else {
+				return 0
+			}
 		})
+		return newState
 	default: 
 		return state
 	}
