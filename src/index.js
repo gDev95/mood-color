@@ -5,7 +5,6 @@ import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import store from './store'
-import { changeMood } from './actions'
 const MoodColorApp = () => (
 	<Provider store={store}>
 		<MuiThemeProvider>
