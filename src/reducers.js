@@ -14,7 +14,7 @@ export function moodApp (state = initialState,action){
 	case MoodActions.MOOD_CHANGE:
 	 	moods.map((mood, index) => {		
 			if (Math.round(Number(action.value)) === index ){
-			// if not mood has no meaning, do not set moodState
+			// if not mood has no meaning, pass the old state of moodState instead setting it
 				if(mood.meaning)
 				{
 					newState = {
