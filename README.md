@@ -1,6 +1,9 @@
 # Mood Color
 
 Remember those funny mood rings our parents told use were stupid and fake. Well, of course they were right but I liked the colors and the idea nonetheless and wrote a little app that tells you what color represents your current mood. 
+# Technical
+
+React along with Material-UI components were used to build the UX. Redux controls data flow. 
 
 # Testing
 For those who want to try it out until its on a hosting server:
